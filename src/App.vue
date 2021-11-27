@@ -35,7 +35,7 @@ export default {
   --color-text_btn:#9495A5;
   --color-input: #fff;
   --bg-color: #FAFAFA;
-  --bg-url: url("assets/img/promo_light.jpg");
+  --bg-url: url("/assets/img/promo_light.jpg");
   --shadow: rgba(194, 195, 214, 0.5);
   --color-line: #E3E4F1;
   --text-through:#D1D2DA;
