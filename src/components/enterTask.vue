@@ -23,21 +23,29 @@ export default {
 </script>
 
 <style lang='scss' scope>
+input {
+    margin-top: 70px;
+    width: 100%;
+    height: 64px;
+    background: var(--color-input);
+    box-shadow: 0px 35px 50px -15px var(--shadow);
+    border-radius: 5px;
+    border: none;
+    padding: 20px 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    color: #9495A5;
+    outline: none;
+}
+
+@media (max-width: 576px) {
     input {
-        margin-top: 70px;
-        width: 100%;
-        height: 64px;
-        background: var(--color-input);
-        box-shadow: 0px 35px 50px -15px var(--shadow);
-        border-radius: 5px;
-        border: none;
-        padding: 20px 24px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: -0.25px;
-        color: #9495A5;
-        outline: none;
+        margin-top: 40px;
+        height: 48px;
+        font-size: 12px;
     }
+}
 </style>

@@ -29,6 +29,16 @@
         <button class="btn clear" @click="deleteCompleted">Clear Completed</button>
       </div>
     </div>
+    <div class="filter filter_mob">
+        <input type="radio" id="all" value="all" v-model="filter">
+        <label for="all">All</label>
+
+        <input type="radio" id="active" value="active" v-model="filter">
+        <label for="active">Active</label>
+
+        <input type="radio" id="completed" value="completed" v-model="filter">
+        <label for="completed">Completed</label>
+      </div>
   </div>
   
 </template>
@@ -146,65 +156,92 @@ export default {
   }
 }
 .task-list {
-    margin-top: 24px;
-    max-height: 500px;
-    overflow: hidden;
-    width: 100%;
-    background: var(--color-input);
-    box-shadow: 0px 35px 50px -15px var(--shadow);
-    border-radius: 5px;
-    &__footer {
-      position: sticky;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
+  margin-top: 24px;
+  max-height: 500px;
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-input);
+  box-shadow: 0px 35px 50px -15px var(--shadow);
+  border-radius: 5px;
+  &__footer {
+    position: sticky;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--color-text_btn);
+    .btn {
+      cursor: pointer;
       font-style: normal;
-      font-weight: normal;
+      font-weight: bold;
       font-size: 14px;
       line-height: 14px;
       color: var(--color-text_btn);
-      .btn {
-        cursor: pointer;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 14px;
-        color: var(--color-text_btn);
-        background: initial; 
-        border: none;
-        padding: 0;
-      }
-      .btn.clear {
-          font-weight: normal;
-      }
-      .filter {
-        input {
-          display: none;
-          appearance: none;
-          &:checked + label {
-            color: #3A7CFD;
-          }
-
-        }
-        label {
-          margin-right: 19px;
-          cursor: pointer;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 14px;
-          color: var(--color-text_btn);
-          background: initial; 
-          border: none;
-          padding: 0;
-          &:last-child {
-            margin-right: 0;
-        
-          }
-        }
-      }
+      background: initial; 
+      border: none;
+      padding: 0;
     }
+    .btn.clear {
+        font-weight: normal;
+    }
+  }
+}
+.filter {
+  input {
+    display: none;
+    appearance: none;
+    &:checked + label {
+      color: #3A7CFD;
+    }
+
+  }
+  label {
+    margin-right: 19px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--color-text_btn);
+    background: initial; 
+    border: none;
+    padding: 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &_mob {
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+    padding: 15px 0;
+    background: var(--color-input);
+    box-shadow: 0px 35px 50px -15px var(--shadow);
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {
+  .filter {
+    display: none;
+    &_mob {
+      display: block;
+    }
+  }
+  .task-list {
+    margin-top: 16px;
+  }
+  .tasks {
+    max-height: 280px;
+  }
 }
 </style>

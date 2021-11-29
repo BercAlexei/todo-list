@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <Container>
+    <div class="container">
       <Heading/>
       <EnterTask/>
       <TaskList/>
       <div class="textDrag">Drag and drop to reorder list</div>
-    </Container>
+    </div>
   </div>
 </template>
 
 <script>
-import Container from './components/container.vue'
 import Heading from './components/heading.vue'
 import EnterTask from './components/enterTask.vue'
 import TaskList from './components/taskList.vue'
 
 export default {
   components: {
-    Container,
     Heading,
     EnterTask,
     TaskList
@@ -50,16 +48,9 @@ export default {
   position: relative;
   padding: 70px 0 52px 0;
   height: 100vh;
-  background: var(--bg-color) var(--bg-url) top center / contain no-repeat;
-  .bg_promo {
-    width: 100vw;
-    img {
-      width: 100%;
-    }
-  }
+  background: var(--bg-url) top center / 100% 300px no-repeat var(--bg-color);
 }
 .textDrag {
-  position: absolute;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -67,8 +58,32 @@ export default {
   text-align: center;
   margin-top: 49px;
   color: var(--color-text_btn);
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+@media (max-width: 768px) {
+  #app {
+    background-size: 100% 230px;
+  }
+}
+
+@media (max-width: 576px) {
+  #app {
+    background-size: 100% 200px;
+    padding: 48px 0 50px 0;
+    // height: 100%;
+  }
+  .container {
+    position: relative;
+    margin: 0 auto;
+    max-width: calc(100% - 52px);
+  }
+  .textDrag {
+    margin-top: 104px;
+  }
 }
 </style>

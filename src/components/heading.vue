@@ -3,7 +3,7 @@
         <h1>
             TODO
         </h1>
-        <div>
+        <div class="theme">
             <label for="theme">
                 <img :src="url_icon" alt="change_theme">
             </label>
@@ -73,25 +73,40 @@ export default {
 </script>
 
 <style lang='scss' scope>
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        font-family: Josefin Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: 15px;
+        color: #FFFFFF;
+    }
+    input {
+        display: none;
+        appearance: none;
+    }
+    label {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 576px) {
     .heading {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         h1 {
-            font-family: Josefin Sans;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 40px;
-            line-height: 40px;
-            letter-spacing: 15px;
-            color: #FFFFFF;
-        }
-        input {
-            display: none;
-            appearance: none;
-        }
-        label {
-            cursor: pointer;
+            font-size: 26px;
+            line-height: 26px;
+        } 
+        .theme {
+            img {
+                height: 20px;
+            }
         }
     }
+    
+}
 </style>

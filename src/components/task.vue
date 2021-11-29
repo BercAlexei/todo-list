@@ -29,78 +29,90 @@ export default {
 </script>
 
 <style lang="scss" scope>
-    .task {
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    width: 100%;
+    height: 63px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    color: var(--color-text_main);
+    border-bottom: 1px solid var(--color-line);
+    cursor: move;
+    input {
+        display: none;
+        appearance: none;
+        &:checked + label {
+            text-decoration: line-through;
+            color: var(--text-through);
+            &:after {
+                content: url("../assets/icons/check.svg");
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0.5px;
+                top: 0.5px;
+                width: 24px;
+                height: 24px;
+                border: none;
+                border-radius: 100%;
+                margin-right: 24px;
+                background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+            }
+        }
+    }
+    label {
+        position: relative;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 20px 24px;
-        width: 100%;
-        height: 63px;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
-        letter-spacing: -0.25px;
-        color: var(--color-text_main);
-        border-bottom: 1px solid var(--color-line);
-        cursor: move;
-        input {
-            display: none;
-            appearance: none;
-            &:checked + label {
-                text-decoration: line-through;
-                color: var(--text-through);
-                &:after {
-                    content: url("../assets/icons/check.svg");
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    left: 0.5px;
-                    top: 0.5px;
-                    width: 24px;
-                    height: 24px;
-                    border: none;
-                    border-radius: 100%;
-                    margin-right: 24px;
-                    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-                }
-            }
+        &:before {
+            content: '';
+            display: block;
+            width: 23px;
+            height: 23px;
+            border: 1px solid var(--color-line);
+            border-radius: 100%;
+            margin-right: 24px;
         }
-        label {
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            &:before {
-                content: '';
-                display: block;
-                width: 23px;
-                height: 23px;
-                border: 1px solid var(--color-line);
-                border-radius: 100%;
-                margin-right: 24px;
-            }
-          
-        }
-        span {
-            cursor: pointer;
-        }
-        .del {
-            cursor: pointer;
-            display: none;
-            &:hover {
-                path {
-                    filter: drop-shadow(1px 1px 2px red);
-                    fill: red;
-                }
-            }
-        }
+        
+    }
+    .del {
+        cursor: pointer;
+        display: none;
         &:hover {
-            .del {
-                display: block;
+            path {
+                filter: drop-shadow(1px 1px 2px red);
+                fill: red;
             }
         }
     }
-    
+    &:hover {
+        .del {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .task {
+        height: 52px;
+        label {
+            font-size: 12px;
+        }
+        .del {
+            display: block;
+        }
+    }
+}
 </style>
