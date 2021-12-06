@@ -147,7 +147,6 @@ export default {
   box-shadow: 0px 35px 50px -15px var(--shadow);
   border-radius: 5px;
   &__footer {
-    position: sticky;
     height: 50px;
     display: flex;
     align-items: center;
@@ -222,9 +221,6 @@ export default {
   }
   .task-list {
     margin-top: 16px;
-  }
-  .tasks {
-    max-height: 280px;
   }
 }
 </style>
