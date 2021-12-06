@@ -139,26 +139,9 @@ export default {
 </script>
 
 <style lang='scss' scope>
-.tasks {
-  max-height: 450px;
-  overflow-y: scroll;
-  &::-webkit-scrollbar{
-    appearance: none;
-    width: 4px;
-    background-color: transparent;
-    position: absolute;
-    right: -4px;
-  }
-  &::-webkit-scrollbar-thumb{
-    appearance: none;
-    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-    width: 4px;
-  }
-}
+
 .task-list {
   margin-top: 24px;
-  max-height: 500px;
-  overflow: hidden;
   width: 100%;
   background: var(--color-input);
   box-shadow: 0px 35px 50px -15px var(--shadow);

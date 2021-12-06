@@ -47,16 +47,17 @@ export default {
 #app {
   position: relative;
   padding: 70px 0 52px 0;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--bg-url) top center / 100% 300px no-repeat var(--bg-color);
 }
 .textDrag {
+  position: relative;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 14px;
-  text-align: center;
   margin-top: 49px;
+  text-align: center;
   color: var(--color-text_btn);
 }
 .container {
