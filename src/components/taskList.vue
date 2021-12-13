@@ -46,7 +46,6 @@
 <script>
 import Task from './task.vue'
 import draggable from 'vuedraggable'
-import {eventEmmiter} from './../main'
 
 class Item{
   constructor(id, title) {
@@ -107,8 +106,8 @@ export default {
       }
     }
   },
-  created() {
-    eventEmmiter.$on('getTask', event => {
+  mounted() {
+    this.$root.$on('getTask', event => {
       let newTask = new Item(this.tasks.length + 1, event)
       this.tasks.push(newTask)
     })

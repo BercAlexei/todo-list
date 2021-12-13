@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import {eventEmmiter} from './../main'
 
 export default {
     data() {
@@ -14,7 +13,7 @@ export default {
     methods: {
         addTask() {
             if(this.title !== '') {
-                eventEmmiter.$emit('getTask', this.title)
+                this.$root.$emit('getTask', this.title)
                 this.title = ''
             }
         }

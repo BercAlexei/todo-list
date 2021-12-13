@@ -23,9 +23,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-@import url('https://unpkg.com/reset-css/reset.css');
 
 :root {
   --color-text_main: #494C6B;
@@ -39,12 +38,8 @@ export default {
   --text-through:#D1D2DA;
 }
 
-* {
-  box-sizing: border-box;
-  font-family:'Josefin Sans', sans-serif;
-}
-
 #app {
+  font-family:'Josefin Sans', sans-serif;
   position: relative;
   padding: 70px 0 52px 0;
   min-height: 100vh;
